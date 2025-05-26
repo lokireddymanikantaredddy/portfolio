@@ -13,3 +13,19 @@ body {
     overflow-y: scroll;
 
 }
+
+#tsparticles {
+  position: fixed !important;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+body, html {
+  overflow-x: hidden;
+}
+

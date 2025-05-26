@@ -1,26 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 import './intro.css';
-// import bg from '../../assets/image.png';
-import btnimg from '../../assets/hireme.png';
-import { Link } from 'react-scroll';
-// import myresume from '../../assets/resume.pdf'
-
 
 const Intro = () => {
   return (
-    <section id="intro">
-        <div className='introcontent'>
-            <span className='hello'>Hello,</span>
-            <span className='introtext'>I'am <span className='introname'>Manikanta Reddy</span><br/>Web Developer
-            <p className='intropara'> I am a Web Developer with experience in creating user friendly websites. </p>
-            <Link><button className='btn'><img src= {btnimg} alt='hier me' className='btnimg'/>Hier Me</button></Link>
-            <Link><a href='resume.pdf' download='Resume.pdf'><button className='btn' >Resume</button></a></Link>
-            </span>
+    <div className="intro-section">
+      <motion.div
+        className="intro-content"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h3>Hello,</h3>
+        <h1>
+          I'm <span className="gradient-text">Manikanta Reddy</span>
+        </h1>
+        <p>
+          A passionate web developer focused on crafting clean, scalable, and user-friendly experiences.
+        </p>
 
+        <div className="intro-buttons">
+          <a href="#contact" className="btn hire-btn">Hire Me</a>
+          <a href="LOKIREDDY MANIKANTA REDDY RESUME.pdf" download="LOKIREDDY MANIKANTA REDDY RESUME.pdf" className="btn resume-btn">Resume</a>
         </div>
-        {/* <img src={bg} alt="profile" className='bg'/> */}
-    </section>
-  )
-}
+      </motion.div>
+    </div>
+  );
+};
 
 export default Intro;

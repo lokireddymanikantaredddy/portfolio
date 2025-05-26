@@ -1,201 +1,145 @@
-/* Contact Page Container */
 #contactpage {
-    min-height: calc(100vh - 4rem);
-    width: 100vw;
-    max-width: 60rem;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-  }
-  
-  /* Title Styling */
+  background: transparent !important;
+
+  padding: 4rem 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clients,
+#contact {
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.contactpagetitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.clientdesc,
+.contactdesc {
+  font-size: 1.05rem;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.contactform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 138, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.contactform:hover {
+  box-shadow: 0 0 30px rgba(255, 138, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.contactform input,
+.contactform textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.contactform input:focus,
+.contactform textarea:focus {
+  border-color: #ff8a00;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.error {
+  border-color: #ff4d4f !important;
+}
+
+.error-message {
+  font-size: 0.85rem;
+  color: #ff4d4f;
+  margin-top: 0.4rem;
+}
+
+.submitbtn {
+  margin-top: 1rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitbtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 15px rgba(229, 46, 113, 0.4);
+}
+
+.submitbtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.link:hover {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+}
+
+@media (max-width: 600px) {
   .contactpagetitle {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-    font-weight: 600;
+    font-size: 2.2rem;
   }
-  
-  /* Client Section */
-  #clients {
-    padding: 2rem 0;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .clientdesc {
-    font-weight: 300;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #a9a5a5;
-  }
-  
-  .clientimgs {
-    margin: 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .clientimg {
-    object-fit: cover;
-    width: 23%;
-    min-width: 120px;
-    max-width: 9rem;
-    border-radius: 0.5rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .clientimg:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Contact Form Section */
-  .contactdesc {
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    color: #a9a5a5;
-    max-width: 700px;
-  }
-  
+
   .contactform {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90vw;
-    max-width: 60rem;
+    padding: 1.5rem;
   }
-  
-  /* Form Inputs */
-  .name, .email, .msg {
-    font-size: 1rem;
-    width: 100%;
-    margin: 0.75rem 0;
-    padding: 1rem;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    background: rgb(40, 40, 40);
-    transition: all 0.3s ease;
-  }
-  
-  .name:focus, .email:focus, .msg:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #4a6bff;
-    transform: translateY(-2px);
-  }
-  
-  .msg {
-    min-height: 150px;
-    resize: vertical;
-  }
-  
-  /* Submit Button */
-  .submitbtn {
-    background: white;
-    color: #222;
-    border: none;
-    padding: 0.75rem 3.5rem;
-    border-radius: 2rem;
-    margin: 2rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .submitbtn:hover {
-    background: #4a6bff;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .submitbtn:active {
-    transform: translateY(0);
-  }
-  
-  /* Social Links */
-  .links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
+
   .link {
-    object-fit: cover;
-    height: 3rem;
-    width: 3rem;
-    transition: all 0.3s ease;
-    filter: grayscale(30%);
+    width: 34px;
+    height: 34px;
   }
-  
-  .link:hover {
-    transform: scale(1.1);
-    filter: grayscale(0%);
-  }
-  
-  /* Error Messages */
-  .error-message {
-    color: #ff4a4a;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    align-self: flex-start;
-  }
-  
-  .name.error, .email.error, .msg.error {
-    border: 1px solid #ff4a4a;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .contactpagetitle {
-      font-size: 2.5rem;
-    }
-    
-    #clients {
-      padding: 1rem 0;
-    }
-    
-    .clientdesc {
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
-    
-    .contactform {
-      width: 95vw;
-    }
-    
-    .submitbtn {
-      padding: 0.75rem 2.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contactpagetitle {
-      font-size: 2rem;
-    }
-    
-    .links {
-      gap: 1rem;
-    }
-    
-    .link {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-  }
+}

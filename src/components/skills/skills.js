@@ -1,54 +1,68 @@
 import React from 'react';
 import './skills.css';
-import uidesign from '../../assets/ui-design.png'
-// import webdesign from '../../assets/website-design.png'
-import reactlogo from '../../assets/reactlogo.png'
-import nodelogo from '../../assets/nodelogo.png'
-import mongo from '../../assets/mongo.png'
+import { FaReact, FaCss3Alt, FaNodeJs, FaHtml5, FaGitAlt } from 'react-icons/fa';
+import { SiMongodb, SiTailwindcss,  } from 'react-icons/si';
+import { IoLogoJavascript } from "react-icons/io5";
+
+const skills = [
+  {
+    icon: <FaHtml5 size={40} color="#e34c26" />,
+    title: "HTML",
+    description: "Experienced in HTML5, CSS3, and JavaScript to build fast, accessible, and SEO-friendly websites."
+  },
+  {
+    icon: <FaCss3Alt size={40} color="#3178C6" />,
+    title: "CSS",
+    description: "Experienced in HTML5, CSS3, and JavaScript to build fast, accessible, and SEO-friendly websites."
+  },
+  {
+    icon: <FaReact size={40} color="#61DBFB" />,
+    title: "React.js Developer",
+    description: "Building responsive SPAs with React Hooks, Context API, and RESTful APIs integration."
+  },
+  {
+    icon: <FaNodeJs size={40} color="#68a063" />,
+    title: "Node.js Developer",
+    description: "Creating scalable backend systems using Node.js and Express."
+  },
+  {
+    icon: <SiMongodb size={40} color="#4DB33D" />,
+    title: "MongoDB Design",
+    description: "Designing efficient NoSQL schemas and deploying via MongoDB Atlas."
+  },
+  {
+    icon: <IoLogoJavascript size={40} color="#FFFF00" />,
+    title: "JavaScript",
+    description: "Writing robust and maintainable code using static typing and modern JavaScript features."
+  },
+  {
+    icon: <SiTailwindcss size={40} color="#38BDF8" />,
+    title: "Tailwind CSS",
+    description: "Crafting beautiful, responsive UIs with utility-first Tailwind CSS framework."
+  },
+  {
+    icon: <FaGitAlt size={40} color="#f1502f" />,
+    title: "Git & GitHub",
+    description: "Version control and collaboration using Git, GitHub flow, and branching strategies."
+  },
+];
 
 const Skills = () => {
   return (
-    <section id='skills'>
-        <span className='skilltitle'>What I do</span>
-        <span className='skilldesc'> I craft full-stack solutions with clean code and modern architectures.</span>
-        <div className='skillbars'>
-            <div className='skillbar'>
-                <img src={uidesign} alt='logo' className='skillbarimg' />
-                <div className='skillbartext'>
-                    <h2>WEB DEVELOPER</h2>
-                    <p>Full-stack web developer specializing in building responsive, high-performance websites using modern technologies like HTML5, CSS3, JavaScript, and popular frameworks</p>
-                </div>
-            </div>
-
-
-            <div className='skillbar'>
-                <img src={reactlogo} alt='logo' className='skillbarimg' />
-                <div className='skillbartext'>
-                    <h2>REACT.JS DEVELOPER</h2>
-                    <p>Skilled React developer with expertise in building dynamic single-page applications using React hooks, context API, and integrating with RESTful APIs and state management solutions.</p>
-                </div>
-            </div>
-
-            <div className='skillbar'>
-                <img src={nodelogo} alt='logo' className='skillbarimg' />
-                <div className='skillbartext'>
-                    <h2>NODE JS</h2>
-                    <p>Full-stack JavaScript developer with strong Node.js expertise, capable of building end-to-end applications using React (frontend) + Node.js/Express (backend)</p>
-                </div>
-            </div>
-
-            <div className='skillbar'>
-                <img src={mongo} alt='logo' className='skillbarimg' />
-                <div className='skillbartext'>
-                    <h2>NODE JS</h2>
-                    <p>Design NoSQL databases with efficient schema architecture, aggregation pipelines, and cloud deployment via MongoDB Atlas.</p>
-                </div>
-            </div>
-
-        </div>
+    <section id="skills">
+      <h2 className="skills-title">What I Do</h2>
+      <p className="skills-subtitle">I craft full-stack solutions with clean code and modern architectures.</p>
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div className="skill-card" key={index}>
+            <div className="icon">{skill.icon}</div>
+            <h3>{skill.title}</h3>
+            <p>{skill.description}</p>
+          </div>
+        ))}
+      </div>
     </section>
-  )
-}
+  );
+};
 
-
-export default Skills
+export default Skills;
