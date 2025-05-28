@@ -7,14 +7,24 @@ const Education = () => {
     {
       school: "Jain University",
       degree: "Bachelor of Technology",
+      location: "Bangalore, Karnataka",
+
       year: "2020 - 2024",
       description: "I completed my Bachelor of Technology in Computer Science and Engineering at Jain University. \n\n I scored 8.0 CGPA."
     },
     {
       school: "Guru's junior college",
       degree: "Intermediate",
+      location: "Guntur, Andhra Pradesh",
       year: "2018 - 2020",
       description: "I completed my Intermediate education at Guru's junior college. \n\n I scored 9.09 in my Intermediate board exams."
+    },
+    {
+      school: "Bell and Bennett High School",
+      degree: "Secondary School",
+      location: "Addanki, Andhra Pradesh",
+      year: "2016 - 2018",
+      description: "I completed my Secondary School education at Bell and Bennett High School. \n\n I scored 8.8 in my Secondary School board exams."
     }
   ];
 
@@ -40,6 +50,7 @@ const Education = () => {
             >
               <h3 className="schoolName">{edu.school}</h3>
               <p className="degree">{edu.degree}</p>
+              <p className="location">{edu.location}</p>
               <p className="year">{edu.year}</p>
               <p className="description">{edu.description}</p>
             </motion.div>
