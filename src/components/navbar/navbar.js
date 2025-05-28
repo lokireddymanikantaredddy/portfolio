@@ -19,7 +19,7 @@ const Navbar = () => {
       <img src={logo} alt="logo" className="logo" />
 
       <div className="desktopmenu">
-        {['intro', 'skills', 'works', 'contact'].map((item, index) => (
+        {['intro', 'skills', 'education', 'works', 'contact'].map((item, index) => (
           <Link
             key={item}
             activeClass="active"
@@ -55,14 +55,14 @@ const Navbar = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          {['intro', 'skills', 'works', 'clients', 'contact'].map((item) => (
+          {['intro', 'skills', 'education', 'works', 'contact'].map((item) => (
             <Link
               key={item}
               activeClass="active"
               to={item}
               spy={true}
               smooth={true}
-              offset={item === 'contact' || item === 'clients' ? -300 : -100}
+              offset={item === 'contact' ? -300 : -100}
               duration={500}
               className="listitem"
               onClick={() => setShowMenu(false)}
