@@ -1,5 +1,5 @@
-import { FaReact, FaNodeJs, FaDatabase, FaGithub, FaYoutube, FaJs, FaCss3, FaHtml5 } from 'react-icons/fa';
-import { SiMongodb, SiFirebase, SiTensorflow, SiOpenai, SiTailwindcss, SiTypescript, SiNextdotjs } from 'react-icons/si';
+import { FaReact, FaJs, FaCss3, FaHtml5 } from 'react-icons/fa';
+import { SiMongodb, SiOpenai, SiTailwindcss, SiTypescript, SiNextdotjs } from 'react-icons/si';
 import carrental from '../../assets/car rental.png';
 import dashboard from '../../assets/dashboard.png';
 import portfolio1 from '../../assets/portfolio-1.png';

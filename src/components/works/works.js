@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './works.css';
-import { FaExternalLinkAlt, FaGithub, FaTimes, FaSearch, FaStar, FaCode, FaLaptopCode, FaRocket, FaArrowRight } from 'react-icons/fa';
+import { FaTimes, FaSearch, FaArrowRight } from 'react-icons/fa';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { BiCodeAlt } from 'react-icons/bi';
 import { motion, AnimatePresence } from 'framer-motion';

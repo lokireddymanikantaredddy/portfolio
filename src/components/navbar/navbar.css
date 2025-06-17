@@ -26,15 +26,23 @@ html {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+.logo-container {
   height: 2.5rem;
   width: 2.5rem;
-  mix-blend-mode: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logo-container svg {
+  height: 100%;
+  width: 100%;
   filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.3));
   transition: filter 0.3s ease;
 }
 
-.logo:hover {
+.logo-container:hover svg {
   filter: drop-shadow(0 0 12px rgba(100, 255, 218, 0.5));
 }
 

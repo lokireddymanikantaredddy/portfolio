@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import './contact.css';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaPaperclip, FaPaperPlane, FaSpinner, FaHandshake, FaLightbulb, FaRocket, FaUsers, FaLaptopCode } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaPaperclip, FaPaperPlane, FaSpinner, FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

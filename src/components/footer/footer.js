@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <nav className="footer-nav">
-            <a href="/">Home</a>
+            <a href="#intro">Home</a>
             <a href="#skills">Skills</a>
             <a href="#works">Projects</a>
             <a href="#education">Education</a>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './navbar.css';
-import logo from '../../assets/coding-logo.svg';
 import { Link } from 'react-scroll';
 import contacting from '../../assets/contact.png';
 import imgmenu from '../../assets/menu.png';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NavbarLogo } from '../logos/CodeLogo';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -69,13 +69,10 @@ const Navbar = () => {
       const elementHeight = element.getBoundingClientRect().height;
       const windowHeight = window.innerHeight;
       
-      // Calculate the offset to show the entire section
       let offsetPosition;
       if (elementHeight < windowHeight - navHeight) {
-        // If section is shorter than viewport, scroll to its top
         offsetPosition = elementPosition + window.pageYOffset - navHeight;
       } else {
-        // If section is taller than viewport, scroll to show as much as possible
         offsetPosition = elementPosition + window.pageYOffset - navHeight + (elementHeight - (windowHeight - navHeight));
       }
 
@@ -93,17 +90,17 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
     >
-      <motion.img 
-        src={logo} 
-        alt="Coding Logo" 
-        className="logo"
+      <motion.div 
+        className="logo-container"
         whileHover={{ 
           scale: 1.1,
           rotate: [0, -10, 10, -10, 0],
           transition: { duration: 0.5 }
         }}
         whileTap={{ scale: 0.95 }}
-      />
+      >
+        <NavbarLogo />
+      </motion.div>
 
       <div className="desktopmenu">
         {['intro', 'skills', 'education', 'works', 'contact'].map((item, index) => (
@@ -119,7 +116,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-80} // Fixed offset for all sections
+              offset={-80}
               className="desktopmenulistitem"
               onClick={() => handleLinkClick(item)}
             >
@@ -170,7 +167,7 @@ const Navbar = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  offset={-80} // Fixed offset for all sections
+                  offset={-80}
                   className="listitem"
                   onClick={() => handleLinkClick(item)}
                 >
