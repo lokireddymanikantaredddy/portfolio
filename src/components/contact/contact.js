@@ -41,11 +41,14 @@ const Contact = () => {
     }
   }, []);
 
+  // Create a memoized version of the debounced save function
+  const saveToLocalStorage = (data) => {
+    localStorage.setItem('contactFormDraft', JSON.stringify(data));
+  };
+
   const debouncedSave = useCallback(
-    debounce((data) => {
-      localStorage.setItem('contactFormDraft', JSON.stringify(data));
-    }, 1000),
-    []
+    debounce(saveToLocalStorage, 1000),
+    [] // Empty dependency array since saveToLocalStorage is defined inside component
   );
 
   const handleInputChange = (e) => {

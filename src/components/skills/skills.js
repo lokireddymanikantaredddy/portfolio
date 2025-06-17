@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import './skills.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaReact, FaCss3Alt, FaNodeJs, FaHtml5, FaGitAlt, FaFigma, FaTools, FaLaptopCode, FaBrain } from 'react-icons/fa';
+import { FaCode, FaDatabase, FaServer, FaPalette } from 'react-icons/fa';
 import { SiMongodb, SiTailwindcss } from 'react-icons/si';
 import { IoLogoJavascript } from "react-icons/io5";
 import { MdDesignServices } from "react-icons/md";
@@ -18,19 +18,19 @@ const skillCategories = {
         relatedTech: ["ES6+", "TypeScript", "DOM API"],
       },
       {
-        icon: <FaReact size={32} color="#61DBFB" />,
+        icon: <FaCode size={32} color="#61DBFB" />,
         title: "React.js",
         description: "Building responsive SPAs with React Hooks",
         relatedTech: ["Redux", "Next.js", "Router"],
       },
       {
-        icon: <FaHtml5 size={32} color="#e34c26" />,
+        icon: <FaPalette size={32} color="#e34c26" />,
         title: "HTML5",
         description: "Semantic and accessible web structures",
         relatedTech: ["SEO", "A11y", "Forms"],
       },
       {
-        icon: <FaCss3Alt size={32} color="#3178C6" />,
+        icon: <FaPalette size={32} color="#3178C6" />,
         title: "CSS3",
         description: "Modern layouts and animations",
         relatedTech: ["Flexbox", "Grid", "SASS"],
@@ -53,7 +53,7 @@ const skillCategories = {
     title: "Backend Development",
     skills: [
       {
-        icon: <FaNodeJs size={32} color="#68a063" />,
+        icon: <FaServer size={32} color="#68a063" />,
         title: "Node.js",
         description: "Server-side JavaScript development",
         relatedTech: ["Express", "REST", "GraphQL"],
@@ -70,7 +70,7 @@ const skillCategories = {
     title: "Tools & DevOps",
     skills: [
       {
-        icon: <FaGitAlt size={32} color="#f1502f" />,
+        icon: <FaDatabase size={32} color="#f1502f" />,
         title: "Git & GitHub",
         description: "Version control and collaboration",
         relatedTech: ["CI/CD", "Actions", "Git Flow"],

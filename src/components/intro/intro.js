@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './intro.css';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import RotatingText from '../text/RotatingText';
 import ProfileCard from '../profile/ProfileCard';
 
@@ -14,7 +13,7 @@ const Intro = () => {
   ];
 
   return (
-    <section className="intro-section">
+    <section id="intro" className="intro-section">
       <div className="intro-container">
         <motion.div
           className="intro-content"
