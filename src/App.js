@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import WaveBackground from "./components/background/WaveBackground";
 import Navbar from "./components/navbar/navbar";
 import Contact from "./components/contact/contact";

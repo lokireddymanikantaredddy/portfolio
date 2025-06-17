@@ -1,7 +1,8 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import React from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import './contact.css';
 import { motion } from 'framer-motion';
-import { FaPaperclip, FaPaperPlane, FaSpinner, FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -182,7 +183,7 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <FaPaperclip />
+        <FaIcons.FaPaperclip />
         <span>{selectedFile.name}</span>
         <button
           type="button"
@@ -358,7 +359,7 @@ const Contact = () => {
 
           <div className="form-group">
             <label htmlFor="attachment" className="file-input-label">
-              <FaPaperclip /> Attach File (Optional)
+              <FaIcons.FaPaperclip /> Attach File (Optional)
             </label>
             <input
               id="attachment"
@@ -385,12 +386,12 @@ const Contact = () => {
             <span className="button-content">
               {isSubmitting ? (
                 <>
-                  <FaSpinner className="spinner" />
+                  <FaIcons.FaSpinner className="spinner" />
                   <span>Sending...</span>
                 </>
               ) : (
                 <>
-                  <FaPaperPlane className="send-icon" />
+                  <FaIcons.FaPaperPlane className="send-icon" />
                   <span>Send Message</span>
                 </>
               )}
@@ -412,7 +413,7 @@ const Contact = () => {
               className="social-link facebook"
               aria-label="Facebook Profile"
             >
-              <FaFacebook />
+              <FaIcons.FaFacebook />
             </motion.a>
             <motion.a
               href="https://twitter.com"
@@ -422,7 +423,7 @@ const Contact = () => {
               className="social-link twitter"
               aria-label="Twitter Profile"
             >
-              <FaTwitter />
+              <FaIcons.FaTwitter />
             </motion.a>
             <motion.a
               href="https://youtube.com"
@@ -432,7 +433,7 @@ const Contact = () => {
               className="social-link youtube"
               aria-label="YouTube Channel"
             >
-              <FaYoutube />
+              <FaIcons.FaYoutube />
             </motion.a>
             <motion.a
               href="https://instagram.com"
@@ -442,7 +443,7 @@ const Contact = () => {
               className="social-link instagram"
               aria-label="Instagram Profile"
             >
-              <FaInstagram />
+              <FaIcons.FaInstagram />
             </motion.a>
           </motion.div>
         </motion.form>

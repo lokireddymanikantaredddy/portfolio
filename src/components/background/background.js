@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Particles } from 'react-tsparticles';
-import { loadSlim } from 'tsparticles-slim';
+import { Particles } from '@tsparticles/react';
+import { loadSlim } from "@tsparticles/slim";
 import './background.css';
 
 const Background = () => {
@@ -30,12 +30,12 @@ const Background = () => {
     },
     fullScreen: false,
     detectRetina: true,
-    fpsLimit: 30, // Reduced FPS
+    fpsLimit: 30,
     interactivity: {
       detectsOn: "window",
       events: {
         onClick: {
-          enable: false // Disabled click interactions
+          enable: false
         },
         onHover: {
           enable: true,
@@ -52,66 +52,50 @@ const Background = () => {
     },
     particles: {
       color: {
-        value: techLogos.map(logo => logo.color)
+        value: "#64ffda"
       },
       links: {
         color: "#64ffda",
         distance: 150,
         enable: true,
-        opacity: 0.3,
+        opacity: 0.2,
         width: 1
       },
       move: {
-        direction: "none",
         enable: true,
         outModes: {
           default: "bounce"
         },
         random: false,
-        speed: 1, // Reduced speed
-        straight: false,
-        rotate: {
-          animation: {
-            enable: false // Disabled rotation
-          }
-        }
+        speed: 2,
+        straight: false
       },
       number: {
         density: {
           enable: true,
-          area: 1000 // Increased area = fewer particles
+          area: 800
         },
-        value: 15 // Reduced number of particles
+        value: 80
       },
       opacity: {
-        value: 0.6
+        value: 0.2
       },
       shape: {
-        type: "circle", // Changed to simple circles instead of images
-        options: {
-          circle: {
-            blur: 0
-          }
-        }
+        type: "circle"
       },
       size: {
-        value: { min: 6, max: 8 },
-        animation: {
-          enable: false // Disabled size animation
-        }
+        value: { min: 1, max: 3 }
       }
-    },
-    smooth: true
+    }
   };
 
   return (
-    <div className="particles-container">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={particleOptions}
-      />
-    </div>
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={particleOptions}
+      className="particles-container"
+    />
   );
 };
 
