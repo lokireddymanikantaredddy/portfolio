@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "./components/background/background";
+import WaveBackground from "./components/background/WaveBackground";
 import Navbar from "./components/navbar/navbar";
 import Contact from "./components/contact/contact";
 import Footer from "./components/footer/footer";
@@ -11,7 +11,7 @@ import Education from "./components/education/education";
 function App() {
   return (
     <div className="App">
-      <Background />
+      <WaveBackground />
       <Navbar />
       <Intro />
       <Skills />

@@ -1,103 +1,357 @@
 .education {
-    padding: 3rem 2rem;
-    min-height: calc(100vh - 4rem);
-    width: 100vw;
-    max-width: 60rem;
+    padding: 4rem 2rem;
+    background: transparent;
+}
+
+.education-content {
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+.section-header {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 4rem;
 }
 
-.educationTitle {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: #fff;
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+        to right,
+        #fff 20%,
+        #66a6ff 30%,
+        #89f7fe 70%,
+        #fff 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shine 4s linear infinite;
 }
 
-.educationList {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
-.educationItem {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    transition: all 0.3s ease-in-out;
+.section-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.timeline {
     position: relative;
+    padding: 2rem 0;
 }
 
-.educationItem:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.educationItem::before {
+.timeline::before {
     content: '';
     position: absolute;
+    left: 50%;
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    border-radius: 1rem;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    opacity: 0;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    width: 2px;
+    background: rgba(52, 152, 219, 0.5);
+    transform: translateX(-50%);
 }
 
-.educationItem:hover::before {
-    opacity: 1;
+.timeline-item {
+    margin-bottom: 3rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.schoolName {
-    font-size: 1.5rem;
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 50%;
+    padding-left: 3rem;
+    
+    
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: 50%;
+    padding-right: 3rem;
+    
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(52, 152, 219, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(52, 152, 219, 0.8);
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.ongoing-indicator {
+    color: #00ffae;
+    will-change: transform;
+}
+
+.timeline-item.selected .timeline-marker {
+    background: rgba(52, 152, 219, 0.3);
     color: #fff;
-    margin-bottom: 0.5rem;
+    transform: translateX(-50%) scale(1.05);
 }
 
-.degree {
+.education-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    will-change: transform, box-shadow;
+}
+
+.education-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.school-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.school-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(52, 152, 219, 0.1);
+    color: rgba(52, 152, 219, 0.8);
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.school-icon:hover {
+    background: rgba(52, 152, 219, 0.2);
+    color: #fff;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.education-header h3 {
     font-size: 1.2rem;
-    color: #4db5ff;
+    color: #fff;
+    margin: 0;
+}
+
+.year-badge {
+    background: rgba(52, 152, 219, 0.2);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.education-details h4 {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
 }
 
-.year {
+.location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.expanded-content {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.achievements h5,
+.courses h5 {
     font-size: 1rem;
-    color: #aaa;
+    color: #fff;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.description {
-    color: #ddd;
-    line-height: 1.6;
+.achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
 }
 
-@media screen and (max-width: 768px) {
+.achievements li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.achievements li::before {
+    content: '•';
+    color: #00ffae;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.course-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.course-header {
+    margin-bottom: 0.8rem;
+}
+
+.course-name {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.topic-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.topic-tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.topic-tag:hover {
+    background: rgba(0, 255, 174, 0.1);
+    border-color: rgba(0, 255, 174, 0.2);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
     .education {
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
     }
 
-    .educationTitle {
-        font-size: 2.5rem;
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        margin-bottom: 3rem;
+        min-height: 200px;
     }
 
-    .schoolName {
-        font-size: 1.3rem;
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin: 0;
+        padding-left: 2.5rem;
+        text-align: left;
+    }
+    .timeline-item:nth-child(even) .timeline-content{
+        margin-right: 0;
+        padding-right: 0;
+        
     }
 
-    .degree {
-        font-size: 1.1rem;
+    .timeline-marker {
+        left: 20px;
     }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+    .school-icon {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+}
+
+.education-desc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 1.5rem auto;
+}
+
+.education-desc-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.education-desc-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 255, 174, 0.2);
+}
+
+.education-desc-icon {
+    font-size: 1.5rem;
+    color: #00ffae;
+    flex-shrink: 0;
+}
+
+.education-desc-item span {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
 } 
